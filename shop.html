@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open shop on SupreCart</title>
+  <style>
+    body{font-family:system-ui,sans-serif;text-align:center;padding:48px 24px;color:#12201C}
+    a.btn{display:block;max-width:320px;margin:14px auto;padding:16px;border-radius:14px;
+          font-weight:700;text-decoration:none}
+    .primary{background:#0B6B58;color:#fff}
+    .secondary{background:#DCF2EA;color:#08493D}
+  </style>
+</head>
+<body>
+  <h2>Opening this shop in SupreCart…</h2>
+  <a id="open" class="btn primary" href="#">Open in app</a>
+  <a class="btn secondary" href="/">Download SupreCart</a>
+
+  <script>
+    const id = location.pathname.split("/").filter(Boolean).pop();
+    const PACKAGE = "com.suprecart.suprecart";   // confirm from your build
+    const fallback = encodeURIComponent(location.origin + "/");
+    const isAndroid = /android/i.test(navigator.userAgent);
+
+    const intentUrl =
+      `intent://shop/${id}#Intent;scheme=suprecart;package=${PACKAGE};` +
+      `S.browser_fallback_url=${fallback};end`;
+    const schemeUrl = `suprecart://shop/${id}`;
+
+    const openBtn = document.getElementById("open");
+    openBtn.href = isAndroid ? intentUrl : schemeUrl;
+
+    // Auto-try on Android Chrome; the button is the backup for in-app browsers
+    if (isAndroid) location.href = intentUrl;
+  </script>
+</body>
+</html>
