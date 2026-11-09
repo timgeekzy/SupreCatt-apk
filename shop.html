@@ -19,10 +19,17 @@
   <a class="btn secondary" href="/">Download SupreCart</a>
 
   <script>
+    // Shop id comes from the path (/shop/123). A query fallback (?seller=123)
+    // rescues links when a host strips the path — Cloudflare Pages pretty-URL
+    // redirects turn /shop/123 into /shop and keep the query string.
     const segments = location.pathname.split("/").filter(Boolean);
-    const rawId = segments.length ? segments[segments.length - 1] : "";
-    const isValid = /^\d+$/.test(rawId);
-    const id = isValid ? rawId : "";
+    const lastSeg = segments.length ? segments[segments.length - 1] : "";
+    const pathId = /^\d+$/.test(lastSeg) ? lastSeg : "";
+    const params = new URLSearchParams(location.search);
+    const qRaw = params.get("seller") || params.get("shop") || params.get("id") || "";
+    const queryId = /^\d+$/.test(qRaw) ? qRaw : "";
+    const id = pathId || queryId;
+    const isValid = id !== "";
 
     const PACKAGE = "com.suprecart.suprecart";
     const fallback = encodeURIComponent(location.origin + "/");
