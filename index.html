@@ -63,6 +63,22 @@ ol.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-r
 ol.steps b{display:block}
 ol.steps span{color:var(--muted);font-size:15px}
 details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 18px;margin-bottom:10px}
+.carousel{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+.c-track{display:flex;transition:transform .35s ease}
+.c-slide{min-width:100%;padding:18px}
+.c-slide img{width:100%;max-height:420px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#fff}
+.c-cap{margin-top:14px}
+.c-cap h3{font-size:20px;margin-bottom:8px}
+.c-cap ol{margin:0;padding-left:20px;color:var(--muted);font-size:15px;display:grid;gap:6px}
+.c-cap b{color:var(--ink)}
+.c-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.c-btn{min-height:40px;padding:0 14px;border-radius:10px;border:1px solid var(--line);background:var(--tint);color:var(--ink);font:600 14px Inter,sans-serif;cursor:pointer}
+.c-btn:hover{border-color:var(--teal);color:var(--teal)}
+.c-btn:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.c-dots{display:flex;gap:8px;justify-content:center;flex:1}
+.c-dot{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
+.c-dot[aria-current="true"]{background:var(--teal)}
+@media (prefers-reduced-motion:reduce){.c-track{transition:none}}
 summary{cursor:pointer;font-weight:600;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
 summary::after{content:"+";color:var(--teal);font-weight:700}
 details[open] summary::after{content:"–"}
@@ -120,11 +136,60 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
  <section>
   <div class="wrap">
    <h2>Made for campus life</h2>
-   <p class="sub">Everything stays between students at your school, so you know who you’re dealing with.</p>
+   <p class="sub">Everything stays between students at your school, so you know who you're dealing with.</p>
    <div class="cols">
-    <div class="box"><span class="ico" aria-hidden="true">🛍️</span><h3>Shop from students</h3><p>Phones, gadgets, books, fashion and more, listed by people on your campus.</p></div>
-    <div class="box"><span class="ico" aria-hidden="true">🔒</span><h3>Pay with confidence</h3><p>Your payment is protected until you get your item, so you don’t have to pay and hope.</p></div>
-    <div class="box"><span class="ico" aria-hidden="true">💸</span><h3>Sell in minutes</h3><p>Post an item with photos, set your price, and get paid straight to your bank.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">???</span><h3>Shop from students</h3><p>Phones, gadgets, books, fashion and more, listed by people on your campus.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">??</span><h3>Pay with confidence</h3><p>Your payment is protected until you get your item, so you don't have to pay and hope.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">??</span><h3>Sell in minutes</h3><p>Post an item with photos, set your price, and get paid straight to your bank.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section id="list-guide" style="padding-top:0">
+  <div class="wrap">
+   <h2>How to list a product</h2>
+   <p class="sub">Follow these steps in the app to create your listing and start selling on campus.</p>
+   <div class="carousel" aria-roledescription="carousel" aria-label="Product listing guide">
+    <div class="c-track" id="guideTrack">
+     <article class="c-slide">
+      <img src="1.jpeg" alt="Step 1: start creating your product listing in SupreCart">
+      <div class="c-cap">
+       <h3>Step 1: Start your listing</h3>
+       <ol>
+        <li><b>Open SupreCart</b> and sign in to your account.</li>
+        <li>Tap the <b>Sell</b> or <b>List item</b> option.</li>
+        <li>Choose the right <b>category</b> and add clear photos of your item.</li>
+       </ol>
+      </div>
+     </article>
+     <article class="c-slide">
+      <img src="2.jpeg" alt="Step 2: add product details and price in SupreCart">
+      <div class="c-cap">
+       <h3>Step 2: Add details and price</h3>
+       <ol>
+        <li>Enter a clear <b>title</b> and honest <b>description</b>.</li>
+        <li>Set the item <b>condition</b> and any important details buyers should know.</li>
+        <li>Choose your <b>price</b> and confirm your pickup or delivery info.</li>
+       </ol>
+      </div>
+     </article>
+     <article class="c-slide">
+      <img src="3.jpeg" alt="Step 3: review and publish your listing in SupreCart">
+      <div class="c-cap">
+       <h3>Step 3: Publish and sell</h3>
+       <ol>
+        <li><b>Review</b> your photos, details, and price for accuracy.</li>
+        <li>Tap <b>Publish</b> to make your listing visible to students.</li>
+        <li>Respond to buyers, complete the handoff, and <b>get paid</b> safely.</li>
+       </ol>
+      </div>
+     </article>
+    </div>
+   </div>
+   <div class="c-nav" aria-label="Carousel controls">
+    <button class="c-btn" id="cPrev" type="button">Previous</button>
+    <div class="c-dots" id="cDots" aria-label="Slide selection"></div>
+    <button class="c-btn" id="cNext" type="button">Next</button>
    </div>
   </div>
  </section>
@@ -231,6 +296,27 @@ var CONFIG = {
     if(navigator.share){navigator.share(data).catch(function(){});}
     else if(navigator.clipboard){navigator.clipboard.writeText(data.url).then(function(){$("share").textContent="Link copied";setTimeout(function(){$("share").textContent="Share with a friend"},2000)}).catch(function(){});}
   });
+
+  var track=$("guideTrack"), dots=$("cDots"), prev=$("cPrev"), next=$("cNext");
+  if(track&&dots){
+    var slides=track.children, idx=0;
+    function go(i){
+      idx=(i+slides.length)%slides.length;
+      track.style.transform="translateX(-"+(idx*100)+"%)";
+      Array.prototype.forEach.call(dots.children,function(d,j){d.setAttribute("aria-current", j===idx?"true":"false");});
+    }
+    for(var i=0;i<slides.length;i++){
+      (function(i){
+        var b=document.createElement("button");
+        b.type="button"; b.className="c-dot"; b.setAttribute("aria-label","Go to slide "+(i+1));
+        b.addEventListener("click",function(){go(i);});
+        dots.appendChild(b);
+      })(i);
+    }
+    if(prev)prev.addEventListener("click",function(){go(idx-1);});
+    if(next)next.addEventListener("click",function(){go(idx+1);});
+    go(0);
+  }
 })();
 </script>
 </body>
