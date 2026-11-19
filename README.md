@@ -36,11 +36,11 @@ edit needed.
 | --- | --- |
 | Overview screenshot | `home.jpg` ✓ |
 | Seller dashboard | `seller_dashboard.jpg` ✓ |
-| Rider / logistics view | `roles-rider.jpeg` |
+| Rider / logistics view | `logistics.jpg` ✓ |
 | Buy guide — find item | `search.jpg` ✓ |
 | Buy guide — pay | `checkout.jpg` ✓ |
 | Buy guide — confirm receipt | `order_details1.jpg` ✓ |
-| Sell guide — open shop | `sell-1.jpeg` |
+| Sell guide — open shop | `open_shop.jpg` ✓ |
 | Sell guide — orders | `order_list.jpg` ✓ |
 | Sell guide — payouts | `payout.jpg` ✓ |
 | Chat thread | `live_chat.jpg` ✓ |
@@ -49,7 +49,7 @@ edit needed.
 
 Already present (listing guide): `1.jpeg`, `2.jpeg`, `3.jpeg`.
 Also on disk (unused): `order_details2.jpg`.
-✓ = wired into the page.
+✓ = wired into the page. All guide slots are filled.
 
 Prefer `.jpeg` / `.jpg` / `.png`. Keep screenshots under ~300 KB so the page stays
 fast on mobile data.
