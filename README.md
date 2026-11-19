@@ -64,13 +64,14 @@ Update `CONFIG` in `index.html`:
 var CONFIG = {
   playStoreUrl: "https://play.google.com/store/apps/details?id=...",
   appStoreUrl: "",
-  version: "X.Y.Z",
-  size: "NN MB",
   whatsappUrl: "https://chat.whatsapp.com/..."
 };
 ```
 
-Open the live page and confirm the version, size and store links match.
+Empty store URLs show a **Coming soon** toast on click (no dead links).
+Social links (website, Instagram, TikTok, X) are plain anchors in the CTA and footer.
+
+Open the live page and confirm the store links and socials match.
 
 ## Local preview
 

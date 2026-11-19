@@ -98,19 +98,29 @@ figure.shot.empty::after{content:attr(data-slot);font:600 13px/1.5 Inter,sans-se
 .cta p{color:#E6F7F5;margin:10px auto 22px;max-width:44ch}
 .cta .btn{max-width:320px;background:#fff;color:var(--teal)}
 .cta .btn:focus-visible{outline-color:#fff}
-.stores{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
-.store-btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:8px 16px;border-radius:12px;background:#0B3B37;color:#fff;text-decoration:none;border:1px solid #0B3B37}
+.cta .socials a{color:#E6F7F5}
+.cta .socials a:hover,.cta .socials a:focus-visible{color:#fff}
+.cta .socials a:focus-visible{outline-color:#fff}
+.stores{display:flex;flex-direction:column;gap:10px;margin-top:16px;max-width:320px}
+.store-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:54px;padding:10px 16px;border-radius:12px;background:#0B3B37;color:#fff;text-decoration:none;border:1px solid #0B3B37}
 .store-btn:hover{filter:brightness(1.08)}
 .store-btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
-.store-btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
 .store-btn svg{width:22px;height:22px;flex:none}
 .store-btn .t{display:flex;flex-direction:column;line-height:1.1;text-align:left}
 .store-btn small{font-size:11px;font-weight:500;opacity:.9}
 .store-btn b{font:700 16px Sora,sans-serif}
+.socials{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;margin:18px 0 0;padding:0;list-style:none}
+.socials a{font:600 14px Inter,sans-serif;color:var(--muted);text-decoration:none}
+.socials a:hover,.socials a:focus-visible{color:var(--teal);text-decoration:underline}
+.socials a:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:50;max-width:min(92vw,420px);padding:14px 18px;border-radius:12px;background:#0B3B37;color:#fff;font:600 14px/1.4 Inter,sans-serif;box-shadow:0 12px 40px rgba(0,0,0,.28);text-align:center}
+.toast[hidden]{display:none}
 footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
 @media (min-width:760px){
  .heroGrid{grid-template-columns:1.2fr .8fr;padding:40px 0 72px}
  .btn{width:auto}
+ .stores{flex-direction:row;max-width:none}
+ .store-btn{width:auto;min-width:180px}
  .cols{grid-template-columns:repeat(3,1fr)}
  .cols.two{grid-template-columns:repeat(2,1fr)}
  .guideGrid{grid-template-columns:1fr 1fr}
@@ -147,7 +157,6 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
       <span class="t"><small>Download on the</small><b>App Store</b></span>
      </a>
     </div>
-    <p class="meta" id="meta">Free · Android only</p>
     <button class="btn ghost" id="share" type="button" style="width:auto;padding:0 18px">Share with a friend</button>
     <div class="note-ios" id="ios">iPhone version isn't available yet. Open this page on an Android phone to download, or share the link with a friend who has one.</div>
    </div>
@@ -536,20 +545,36 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
     <h2>Join the campus market</h2>
     <p>Get the app, then join the community for launch updates and early seller perks.</p>
     <p class="meta"><a id="wa" href="#" rel="noopener">Join the WhatsApp community</a></p>
+    <ul class="socials" aria-label="SupreCart elsewhere" style="margin-top:22px">
+     <li><a href="https://suprecart.com.ng" rel="noopener" target="_blank">Website</a></li>
+     <li><a href="https://www.instagram.com/suprecart.ng/" rel="noopener" target="_blank">Instagram</a></li>
+     <li><a href="https://www.tiktok.com/@suprecart" rel="noopener" target="_blank">TikTok</a></li>
+     <li><a href="https://x.com/SupreCart" rel="noopener" target="_blank">X</a></li>
+    </ul>
    </div>
   </div>
  </section>
 </main>
 
-<footer><div class="wrap">© <span id="yr"></span> SupreCart · Built for UNILORIN students</div></footer>
+<footer>
+ <div class="wrap">
+  <ul class="socials" aria-label="SupreCart elsewhere" style="margin-top:0;margin-bottom:14px">
+   <li><a href="https://suprecart.com.ng" rel="noopener" target="_blank">suprecart.com.ng</a></li>
+   <li><a href="https://www.instagram.com/suprecart.ng/" rel="noopener" target="_blank">@suprecart.ng</a></li>
+   <li><a href="https://www.tiktok.com/@suprecart" rel="noopener" target="_blank">@suprecart</a></li>
+   <li><a href="https://x.com/SupreCart" rel="noopener" target="_blank">@SupreCart</a></li>
+  </ul>
+  © <span id="yr"></span> SupreCart · Built for UNILORIN students
+ </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>Coming soon — join the WhatsApp community for launch updates.</div>
 
 <script>
 // ===== EDIT THESE =====
 var CONFIG = {
-  playStoreUrl: "",         // Google Play listing URL
-  appStoreUrl: "",          // App Store listing URL
-  version: "1.1.0",
-  size: "80 MB",
+  playStoreUrl: "",         // Google Play listing URL (empty = "coming soon" toast)
+  appStoreUrl: "",          // App Store listing URL (empty = "coming soon" toast)
   whatsappUrl: "https://chat.whatsapp.com/BF1EXXvMRXy98MT1aExRN8?s=cl&p=a&mlu=4&ilr=4&iam=0"
 };
 // ======================
@@ -557,14 +582,36 @@ var CONFIG = {
   var $=function(id){return document.getElementById(id)};
   var ua=navigator.userAgent||"";
   var isIOS=/iPhone|iPad|iPod/i.test(ua);
-  var bits=["Free","Android only"];
-  if(CONFIG.version)bits.push("Version "+CONFIG.version);
-  if(CONFIG.size)bits.push(CONFIG.size);
-  $("meta").textContent=bits.join(" · ");
   if(CONFIG.whatsappUrl)$("wa").href=CONFIG.whatsappUrl;else $("wa").parentNode.style.display="none";
+
+  var toast=$("toast"), toastTimer=null;
+  function showToast(msg){
+    if(!toast)return;
+    toast.textContent=msg;
+    toast.hidden=false;
+    if(toastTimer)clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toast.hidden=true;},3200);
+  }
+
   var ps=$("playStore"), as=$("appStore");
-  if(CONFIG.playStoreUrl){ps.href=CONFIG.playStoreUrl;}else{ps.setAttribute("aria-disabled","true");ps.removeAttribute("href");}
-  if(CONFIG.appStoreUrl){as.href=CONFIG.appStoreUrl;if(isIOS)$("ios").style.display="none";}else{as.setAttribute("aria-disabled","true");as.removeAttribute("href");if(isIOS)$("ios").style.display="block";}
+  function wireStore(btn,url,soonMsg){
+    if(!btn)return;
+    if(url){
+      btn.href=url;
+      btn.target="_blank";
+      btn.addEventListener("click",function(e){/* normal navigate */});
+    }else{
+      btn.removeAttribute("target");
+      btn.addEventListener("click",function(e){
+        e.preventDefault();
+        showToast(soonMsg);
+      });
+    }
+  }
+  wireStore(ps,CONFIG.playStoreUrl,"Coming soon on Google Play — join WhatsApp for launch updates.");
+  wireStore(as,CONFIG.appStoreUrl,"Coming soon on the App Store — join WhatsApp for launch updates.");
+  if(isIOS)$("ios").style.display=CONFIG.appStoreUrl?"none":"block";
+
   $("yr").textContent=new Date().getFullYear();
   $("share").addEventListener("click",function(){
     var data={title:"SupreCart",text:"Buy and sell on campus with SupreCart.",url:location.href.split("#")[0]};
