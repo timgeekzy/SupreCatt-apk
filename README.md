@@ -35,18 +35,21 @@ edit needed.
 | Slot | File under `images/` |
 | --- | --- |
 | Overview screenshot | `home.jpg` ✓ |
+| Seller dashboard | `seller_dashboard.jpg` ✓ |
+| Rider / logistics view | `roles-rider.jpeg` |
+| Buy guide — find item | `search.jpg` ✓ |
 | Buy guide — pay | `checkout.jpg` ✓ |
 | Buy guide — confirm receipt | `order_details1.jpg` ✓ |
-| Order tracking | `order_details2.jpg` ✓ |
+| Sell guide — open shop | `sell-1.jpeg` |
+| Sell guide — orders | `order_list.jpg` ✓ |
+| Sell guide — payouts | `payout.jpg` ✓ |
+| Chat thread | `live_chat.jpg` ✓ |
+| Order tracking | `order_tracking.jpg` ✓ |
 | Share shop link | `shop_share.jpg` ✓ |
-| Seller dashboard | `roles-seller.jpeg` |
-| Rider / logistics view | `roles-rider.jpeg` |
-| Buy guide — find item | `buy-1.jpeg` |
-| Sell guide step 1–3 | `sell-1.jpeg`, `sell-2.jpeg`, `sell-3.jpeg` |
-| Chat thread | `feat-chat.jpeg` |
 
 Already present (listing guide): `1.jpeg`, `2.jpeg`, `3.jpeg`.
-✓ = already added.
+Also on disk (unused): `order_details2.jpg`.
+✓ = wired into the page.
 
 Prefer `.jpeg` / `.jpg` / `.png`. Keep screenshots under ~300 KB so the page stays
 fast on mobile data.
