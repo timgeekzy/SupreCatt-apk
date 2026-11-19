@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>SupreCart: buy and sell on campus</title>
-<meta name="description" content="Download SupreCart, the campus marketplace for University of Ilorin students. Buy, sell and get paid safely.">
+<meta name="description" content="SupreCart is the campus marketplace for University of Ilorin students. Buy, sell, chat and get paid safely — delivery within 2 hours.">
 <meta name="theme-color" content="#0B7F75">
 <meta property="og:title" content="SupreCart: buy and sell on campus">
-<meta property="og:description" content="The campus marketplace for University of Ilorin students. Download the Android app.">
+<meta property="og:description" content="The campus marketplace for University of Ilorin students. Buy, sell and get paid safely.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🛒%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
@@ -15,21 +15,22 @@
 :root{--bg:#FFFFFF;--surface:#FFFFFF;--tint:#E8F6F4;--ink:#0B3B37;--muted:#4A6B68;--line:#CFE8E5;--teal:#0B7F75;--teal-ink:#FFFFFF;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+html{scroll-padding-top:72px;scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 h1,h2,h3{font-family:Sora,Inter,system-ui,sans-serif;line-height:1.15;margin:0}
 a{color:inherit}
 .wrap{max-width:980px;margin:0 auto;padding:0 20px}
 .hero{background:linear-gradient(180deg,#fff 0%,#E4F4F2 100%);color:var(--ink)}
-nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0;flex-wrap:wrap}
 .logo{font:800 20px Sora,sans-serif;text-decoration:none;display:flex;gap:8px;align-items:center}
 .logo b{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:var(--teal);color:var(--teal-ink);font-size:17px}
+.navLinks{display:flex;gap:18px;flex-wrap:wrap}
 nav a.link{font-size:14px;color:var(--muted);text-decoration:none}
 nav a.link:hover,nav a.link:focus-visible{color:var(--teal);text-decoration:underline}
 .heroGrid{display:grid;gap:32px;padding:28px 0 56px;align-items:center}
 .eyebrow{display:inline-block;font-size:13px;font-weight:600;color:var(--teal);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px}
 h1{font-size:clamp(32px,7vw,52px);font-weight:800}
-.lead{color:var(--muted);font-size:18px;margin:16px 0 26px;max-width:34ch}
+.lead{color:var(--muted);font-size:18px;margin:16px 0 26px;max-width:36ch}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:12px;background:var(--teal);color:var(--teal-ink);font:700 17px Sora,sans-serif;text-decoration:none;border:0;cursor:pointer;width:100%}
 .btn:hover{filter:brightness(1.07)}
 .btn:focus-visible,summary:focus-visible,.ghost:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
@@ -47,7 +48,7 @@ h1{font-size:clamp(32px,7vw,52px);font-weight:800}
 .card span+span{width:55%;background:var(--teal)}
 section{padding:52px 0}
 h2{font-size:clamp(24px,5vw,32px);margin-bottom:10px}
-.sub{color:var(--muted);margin:0 0 28px;max-width:60ch}
+.sub{color:var(--muted);margin:0 0 28px;max-width:62ch}
 .cols{display:grid;gap:14px}
 .box{background:var(--tint);border:1px solid var(--line);border-radius:14px;padding:20px}
 .box h3{font-size:18px;margin-bottom:6px}
@@ -57,6 +58,7 @@ h2{font-size:clamp(24px,5vw,32px);margin-bottom:10px}
 .mini li:last-child{margin-bottom:0}
 .mini b{color:var(--ink)}
 .ico{font-size:26px;margin-bottom:10px;display:block}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--teal);background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:10px}
 ol.steps{list-style:none;margin:0;padding:0;counter-reset:s;display:grid;gap:14px}
 ol.steps li{counter-increment:s;display:flex;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
 ol.steps li::before{content:counter(s);flex:none;width:32px;height:32px;border-radius:50%;background:var(--teal);color:var(--teal-ink);display:grid;place-items:center;font:700 15px Sora,sans-serif}
@@ -66,8 +68,6 @@ details{background:var(--surface);border:1px solid var(--line);border-radius:12p
 .carousel{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
 .c-track{display:flex;transition:transform .35s ease}
 .c-slide{min-width:100%;padding:18px}
-.c-slide img{width:100%;max-height:420px;object-fit:contain;border-radius:12px;border:1px solid var(--line);background:#fff}
-.c-cap{margin-top:14px}
 .c-cap h3{font-size:20px;margin-bottom:8px}
 .c-cap ol{margin:0;padding-left:20px;color:var(--muted);font-size:15px;display:grid;gap:6px}
 .c-cap b{color:var(--ink)}
@@ -84,6 +84,16 @@ summary::after{content:"+";color:var(--teal);font-weight:700}
 details[open] summary::after{content:"–"}
 details p{margin:0 0 16px;color:var(--muted);font-size:15px}
 code{font:500 13px ui-monospace,Menlo,Consolas,monospace;word-break:break-all;background:var(--bg);padding:2px 6px;border-radius:5px}
+.guideBlock{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:18px}
+.guideBlock h3{font-size:20px;margin-bottom:6px}
+.guideBlock .sub{margin-bottom:18px}
+.guideGrid{display:grid;gap:16px}
+figure.shot{margin:0;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:10px}
+figure.shot img{width:100%;display:block;border-radius:10px;max-height:480px;object-fit:contain;background:#fff}
+figure.shot figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
+figure.shot.empty{min-height:220px;display:grid;place-items:center;border-style:dashed;background:var(--tint);padding:24px}
+figure.shot.empty::after{content:attr(data-slot);font:600 13px/1.5 Inter,sans-serif;color:var(--muted);text-align:center;max-width:36ch}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 .cta{background:var(--teal);color:#fff;text-align:center;border-radius:20px;padding:40px 22px}
 .cta p{color:#E6F7F5;margin:10px auto 22px;max-width:44ch}
 .cta .btn{max-width:320px;background:#fff;color:var(--teal)}
@@ -103,8 +113,9 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
  .btn{width:auto}
  .cols{grid-template-columns:repeat(3,1fr)}
  .cols.two{grid-template-columns:repeat(2,1fr)}
+ .guideGrid{grid-template-columns:1fr 1fr}
+ .guideGrid .wide{grid-column:1/-1}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -112,12 +123,20 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
  <div class="wrap">
   <nav aria-label="Main">
    <a class="logo" href="#top"><b>S</b>SupreCart</a>
+   <div class="navLinks">
+    <a class="link" href="#overview">Overview</a>
+    <a class="link" href="#who">Who it's for</a>
+    <a class="link" href="#how">How it works</a>
+    <a class="link" href="#features">Features</a>
+    <a class="link" href="#guides">Guides</a>
+    <a class="link" href="#faq">FAQ</a>
+   </div>
   </nav>
   <div class="heroGrid" id="top">
    <div>
     <span class="eyebrow">For UNILORIN students</span>
     <h1>Buy and sell on campus, safely.</h1>
-    <p class="lead">Find what you need from students around you, or list what you don’t, and get paid without the stress.</p>
+    <p class="lead">SupreCart is the campus marketplace where students list thrift, wigs, sneakers, food and gadgets — chat, pay and hand over without the stress. Delivery promise: within 2 hours.</p>
     <div class="stores" aria-label="App stores">
      <a class="store-btn" id="playStore" href="#" rel="noopener">
       <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3.6 2.2c-.4.4-.6 1-.6 1.8v16c0 .8.2 1.4.6 1.8l.1.1 9-9v-.2l-9-9-.1-.1z"/><path d="M16.7 16.8l-3-3v-.2l3-3 .1.1 3.5 2c1 .6 1 1.5 0 2.1l-3.5 2h-.1z" opacity=".9"/><path d="M16.8 16.8l-3.1-3.1L3.6 23.8c.4.4 1 .4 1.8 0l11.4-6.5v-.5z" opacity=".8"/><path d="M16.8 10.6L5.4 4.1c-.8-.4-1.4-.4-1.8 0l10.1 10.1 3.1-3.1v-.5z" opacity=".8"/></svg>
@@ -128,7 +147,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
       <span class="t"><small>Download on the</small><b>App Store</b></span>
      </a>
     </div>
-    <p class="meta" id="meta">Free \u2022 Android only</p>
+    <p class="meta" id="meta">Free · Android only</p>
     <button class="btn ghost" id="share" type="button" style="width:auto;padding:0 18px">Share with a friend</button>
     <div class="note-ios" id="ios">iPhone version isn't available yet. Open this page on an Android phone to download, or share the link with a friend who has one.</div>
    </div>
@@ -147,105 +166,372 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:13px;text-align:center}
 </header>
 
 <main>
- <section>
+ <!-- ========== OVERVIEW ========== -->
+ <section id="overview">
   <div class="wrap">
-   <h2>Made for campus life</h2>
-   <p class="sub">Everything stays between students at your school, so you know who you're dealing with.</p>
-   <div class="cols">
-    <div class="box"><span class="ico" aria-hidden="true">???</span><h3>Shop from students</h3><p>Phones, gadgets, books, fashion and more, listed by people on your campus.</p></div>
-    <div class="box"><span class="ico" aria-hidden="true">??</span><h3>Pay with confidence</h3><p>Your payment is protected until you get your item, so you don't have to pay and hope.</p></div>
-    <div class="box"><span class="ico" aria-hidden="true">??</span><h3>Sell in minutes</h3><p>Post an item with photos, set your price, and get paid straight to your bank.</p></div>
-   </div>
-  </div>
- </section>
-
- <section id="list-guide" style="padding-top:0">
-  <div class="wrap">
-   <h2>How to list a product</h2>
-   <p class="sub">Follow these steps in the app to create your listing and start selling on campus.</p>
-   <div class="carousel" aria-roledescription="carousel" aria-label="Product listing guide">
-    <div class="c-track" id="guideTrack">
-     <article class="c-slide">
-      <img src="images/1.jpeg" alt="Step 1: start creating your product listing in SupreCart">
-      <div class="c-cap">
-       <h3>Step 1: Start your listing</h3>
-       <ol>
-        <li><b>Open SupreCart</b> and sign in to your account.</li>
-        <li>Tap the <b>Sell</b> or <b>List item</b> option.</li>
-        <li>Choose the right <b>category</b> and add clear photos of your item.</li>
-       </ol>
-      </div>
-     </article>
-     <article class="c-slide">
-      <img src="images/2.jpeg" alt="Step 2: add product details and price in SupreCart">
-      <div class="c-cap">
-       <h3>Step 2: Add details and price</h3>
-       <ol>
-        <li>Enter a clear <b>title</b> and honest <b>description</b>.</li>
-        <li>Set the item <b>condition</b> and any important details buyers should know.</li>
-        <li>Choose your <b>price</b> and confirm your pickup or delivery info.</li>
-       </ol>
-      </div>
-     </article>
-     <article class="c-slide">
-      <img src="images/3.jpeg" alt="Step 3: review and publish your listing in SupreCart">
-      <div class="c-cap">
-       <h3>Step 3: Publish and sell</h3>
-       <ol>
-        <li><b>Review</b> your photos, details, and price for accuracy.</li>
-        <li>Tap <b>Publish</b> to make your listing visible to students.</li>
-        <li>Respond to buyers, complete the handoff, and <b>get paid</b> safely.</li>
-       </ol>
-      </div>
-     </article>
+   <h2>What is SupreCart?</h2>
+   <p class="sub">A trusted marketplace built for UNILORIN students. Sellers come from Tanke, Oke-Odo, Sanrab and inside campus, so you know who you're dealing with. Everything — listing, chat, payment, handoff and payout — happens in one app.</p>
+   <div class="guideGrid">
+    <div class="box wide">
+     <span class="tag">Project at a glance</span>
+     <h3>Campus commerce, end to end</h3>
+     <p>Students open a shop, list items with photos, chat with buyers, take protected payments and get paid to their bank. Riders handle delivery inside the 2-hour promise, while staff keep the market fair.</p>
+     <ul class="mini">
+      <li><b>Categories:</b> thrift, wigs, sneakers, food, gadgets and more.</li>
+      <li><b>Payments:</b> Paystack — money is held until the buyer confirms receipt.</li>
+      <li><b>Realtime:</b> in-app chat between buyer and seller on every order.</li>
+      <li><b>Trust:</b> verified email, reviews, moderation and an admin back office.</li>
+     </ul>
     </div>
-   </div>
-   <div class="c-nav" aria-label="Carousel controls">
-    <button class="c-btn" id="cPrev" type="button">Previous</button>
-    <div class="c-dots" id="cDots" aria-label="Slide selection"></div>
-    <button class="c-btn" id="cNext" type="button">Next</button>
+    <!-- IMAGE SLOT: overview hero shot → save as images/overview-app.jpeg -->
+    <figure class="shot" data-slot="Overview screenshot → save as images/overview-app.jpeg">
+     <img src="images/overview-app.jpeg" alt="SupreCart app home feed showing campus listings" loading="lazy"
+          onerror="this.parentElement.classList.add('empty');this.remove()">
+     <figcaption>Home feed — listings from students near you</figcaption>
+    </figure>
    </div>
   </div>
  </section>
 
- <section id="use" style="padding-top:0">
+ <!-- ========== WHO IT'S FOR ========== -->
+ <section id="who" style="padding-top:0">
   <div class="wrap">
-   <h2>How to use the app</h2>
-   <p class="sub">Buy from students around you, or turn what you no longer need into cash. Here’s the flow either way.</p>
-   <div class="cols two">
+   <h2>Who it's for</h2>
+   <p class="sub">Three roles share the same app. Pick the path that fits you — you can switch any time from settings.</p>
+   <div class="cols">
     <div class="box">
      <span class="ico" aria-hidden="true">🛍️</span>
+     <h3>Buyers</h3>
+     <p>Browse and search campus listings, pay in-app with protection, chat with sellers, and confirm when you have the item.</p>
+     <ul class="mini">
+      <li>Wishlist and notifications</li>
+      <li>Order tracking to your door</li>
+      <li>Reviews after every handoff</li>
+     </ul>
+    </div>
+    <div class="box">
+     <span class="ico" aria-hidden="true">🏪</span>
+     <h3>Sellers</h3>
+     <p>Open a shop in minutes, post items with photos, answer buyers in chat, and receive payouts straight to your bank.</p>
+     <ul class="mini">
+      <li>Listings, orders and payouts in one dashboard</li>
+      <li>Shop page you can share anywhere</li>
+      <li>Reviews that build your reputation</li>
+     </ul>
+    </div>
+    <div class="box">
+     <span class="ico" aria-hidden="true">🛵</span>
+     <h3>Riders &amp; staff</h3>
+     <p>Riders pick up and deliver inside the 2-hour window. Area-office and admin staff assign jobs, settle disputes and keep quality up.</p>
+     <ul class="mini">
+      <li>Delivery jobs and earnings</li>
+      <li>Area-office dashboards</li>
+      <li>Admin: users, orders, payouts, moderation</li>
+     </ul>
+    </div>
+   </div>
+   <!-- IMAGE SLOT: role switcher or seller dashboard → images/roles-seller.jpeg -->
+   <div class="guideGrid" style="margin-top:16px">
+    <figure class="shot" data-slot="Seller dashboard → save as images/roles-seller.jpeg">
+     <img src="images/roles-seller.jpeg" alt="Seller dashboard with listings, orders and payouts" loading="lazy"
+          onerror="this.parentElement.classList.add('empty');this.remove()">
+     <figcaption>Seller dashboard — listings, orders, payouts</figcaption>
+    </figure>
+    <figure class="shot" data-slot="Rider / logistics view → save as images/roles-rider.jpeg">
+     <img src="images/roles-rider.jpeg" alt="Rider logistics view with delivery jobs" loading="lazy"
+          onerror="this.parentElement.classList.add('empty');this.remove()">
+     <figcaption>Rider view — jobs, route and earnings</figcaption>
+    </figure>
+   </div>
+  </div>
+ </section>
+
+ <!-- ========== HOW IT WORKS ========== -->
+ <section id="how" style="padding-top:0">
+  <div class="wrap">
+   <h2>How it works</h2>
+   <p class="sub">The same money rules on both sides: payment is protected until the buyer confirms, then the seller gets paid.</p>
+   <div class="cols two">
+    <div class="box">
+     <span class="ico" aria-hidden="true">🛒</span>
      <h3>Buying an item</h3>
      <ol class="mini">
-      <li><b>Create your account</b> and open the app to see listings from your campus.</li>
-      <li><b>Find what you need</b> by searching or browsing the categories.</li>
-      <li><b>Pay in the app.</b> Your payment is held until you get the item, so you don’t have to pay and hope.</li>
-      <li><b>Confirm once you have it</b> to complete the order and release the payment.</li>
+      <li><b>Create your account</b> and confirm your email.</li>
+      <li><b>Find what you need</b> — search or browse categories.</li>
+      <li><b>Chat with the seller</b> to agree price and meetup or delivery.</li>
+      <li><b>Pay in the app.</b> Your money is held until you get the item.</li>
+      <li><b>Confirm receipt</b> to complete the order and release payment.</li>
      </ol>
     </div>
     <div class="box">
      <span class="ico" aria-hidden="true">💸</span>
      <h3>Selling an item</h3>
      <ol class="mini">
-      <li><b>Post your item</b> with clear photos, a title, your price and a short description.</li>
-      <li><b>Chat with buyers</b> and agree on the price and a safe place to meet or deliver.</li>
-      <li><b>Hand over the item</b> and get paid straight to your bank.</li>
+      <li><b>Open your shop</b> and verify your email.</li>
+      <li><b>Post the item</b> — photos, title, condition, price.</li>
+      <li><b>Answer buyers</b> in chat and accept the order.</li>
+      <li><b>Hand over</b> the item (meetup or rider pickup).</li>
+      <li><b>Get paid</b> — payout lands in your bank account.</li>
      </ol>
+    </div>
+   </div>
+   <div class="guideGrid" style="margin-top:16px">
+    <div class="box">
+     <span class="tag">Delivery</span>
+     <h3>Within 2 hours</h3>
+     <p>Riders handle campus drop-offs. Orders move through picked up → on the way → delivered, and everyone sees the status live.</p>
+    </div>
+    <div class="box">
+     <span class="tag">Safety</span>
+     <h3>Built-in protections</h3>
+     <p>Escrow-style payments, verified sellers, order history, reviews, moderation and a dispute flow if something goes wrong.</p>
     </div>
    </div>
   </div>
  </section>
 
- <section style="padding-top:0">
+ <!-- ========== FEATURES ========== -->
+ <section id="features" style="padding-top:0">
   <div class="wrap">
-   <h2>Questions</h2>
-   <p class="sub"></p>
-   <details><summary>Is it free?</summary><p>Yes, the app is free to download and use. A small commission applies when an item is sold.</p></details>
-   <details><summary>Will it come to the Play Store?</summary><p>That’s planned. Once it’s live you’ll be able to update from there.</p></details>
-   <details><summary>I have an iPhone. What can I do?</summary><p>An iPhone version isn’t available yet. Join the community below and we’ll tell you when it is.</p></details>
+   <h2>What's inside the app</h2>
+   <p class="sub">Everything a campus market needs — nothing you have to leave the app for.</p>
+   <div class="cols">
+    <div class="box"><span class="ico" aria-hidden="true">💬</span><h3>In-app chat</h3><p>Realtime buyer–seller messaging on every listing and order.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">🔒</span><h3>Protected payments</h3><p>Paystack checkout; funds released only after you confirm receipt.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">⭐</span><h3>Reviews &amp; trust</h3><p>Ratings after each deal, seller profiles and verification badges.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">❤️</span><h3>Wishlist</h3><p>Save items and come back when you're ready to buy.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">🔔</span><h3>Notifications</h3><p>Orders, messages and payout updates without refreshing.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">🏦</span><h3>Seller payouts</h3><p>Bank details in settings; payouts tracked in your dashboard.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">📦</span><h3>Order tracking</h3><p>Live status from payment to handoff, for buyers and sellers.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">🛡️</span><h3>Admin &amp; moderation</h3><p>Staff tools for users, listings, disputes and platform health.</p></div>
+    <div class="box"><span class="ico" aria-hidden="true">🔗</span><h3>Shareable shop links</h3><p>One link opens your shop straight in the app from any chat.</p></div>
+   </div>
   </div>
  </section>
 
+ <!-- ========== GUIDES ========== -->
+ <section id="guides" style="padding-top:0">
+  <div class="wrap">
+   <h2>Step-by-step guides</h2>
+   <p class="sub">Screenshot walkthroughs for the three things students do most. Use Previous / Next on each strip.</p>
+
+   <!-- Guide 1: list a product (images already in images/) -->
+   <div class="guideBlock">
+    <h3>Guide 1 · List a product</h3>
+    <p class="sub">From opening the app to a live listing other students can buy.</p>
+    <div class="carousel" aria-roledescription="carousel" aria-label="Product listing guide">
+     <div class="c-track" data-carousel>
+      <article class="c-slide">
+       <figure class="shot">
+        <img src="images/1.jpeg" alt="Step 1: start creating your product listing in SupreCart" loading="lazy">
+        <figcaption>Step 1 — start the listing</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 1: Start your listing</h3>
+        <ol>
+         <li><b>Open SupreCart</b> and sign in to your account.</li>
+         <li>Tap <b>Sell</b> or <b>List item</b>.</li>
+         <li>Choose the right <b>category</b> and add clear photos.</li>
+        </ol>
+       </div>
+      </article>
+      <article class="c-slide">
+       <figure class="shot">
+        <img src="images/2.jpeg" alt="Step 2: add product details and price in SupreCart" loading="lazy">
+        <figcaption>Step 2 — details and price</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 2: Add details and price</h3>
+        <ol>
+         <li>Enter a clear <b>title</b> and honest <b>description</b>.</li>
+         <li>Set <b>condition</b> and anything buyers should know.</li>
+         <li>Choose your <b>price</b> and pickup or delivery info.</li>
+        </ol>
+       </div>
+      </article>
+      <article class="c-slide">
+       <figure class="shot">
+        <img src="images/3.jpeg" alt="Step 3: review and publish your listing in SupreCart" loading="lazy">
+        <figcaption>Step 3 — publish</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 3: Publish and sell</h3>
+        <ol>
+         <li><b>Review</b> photos, details and price.</li>
+         <li>Tap <b>Publish</b> to make it visible on campus.</li>
+         <li>Reply to buyers, hand off, and <b>get paid</b>.</li>
+        </ol>
+       </div>
+      </article>
+     </div>
+    </div>
+    <div class="c-nav" aria-label="Listing guide controls">
+     <button class="c-btn" data-prev type="button">Previous</button>
+     <div class="c-dots" data-dots aria-label="Slide selection"></div>
+     <button class="c-btn" data-next type="button">Next</button>
+    </div>
+   </div>
+
+   <!-- Guide 2: buy & pay (image slots) -->
+   <div class="guideBlock">
+    <h3>Guide 2 · Buy and pay safely</h3>
+    <p class="sub">Search → chat → protected payment → confirm receipt.</p>
+    <div class="carousel" aria-roledescription="carousel" aria-label="Buying guide">
+     <div class="c-track" data-carousel>
+      <article class="c-slide">
+       <figure class="shot" data-slot="Search / home feed → save as images/buy-1.jpeg">
+        <img src="images/buy-1.jpeg" alt="Search or browse listings on the home feed" loading="lazy"
+             onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption>Find the item</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 1: Find it</h3>
+        <ol>
+         <li>Open the app and <b>search</b> or browse categories.</li>
+         <li>Open the listing and check photos, price and seller.</li>
+         <li>Tap <b>Buy</b> or message the seller first.</li>
+        </ol>
+       </div>
+      </article>
+      <article class="c-slide">
+       <figure class="shot" data-slot="Checkout / Paystack screen → save as images/buy-2.jpeg">
+        <img src="images/buy-2.jpeg" alt="Checkout screen with protected payment" loading="lazy"
+             onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption>Pay in-app</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 2: Pay with protection</h3>
+        <ol>
+         <li>Confirm delivery option (meetup or rider).</li>
+         <li>Pay with <b>card, transfer or USSD</b> via Paystack.</li>
+         <li>Your money is <b>held</b> — not released yet.</li>
+        </ol>
+       </div>
+      </article>
+      <article class="c-slide">
+       <figure class="shot" data-slot="Order detail / confirm receipt → save as images/buy-3.jpeg">
+        <img src="images/buy-3.jpeg" alt="Order detail screen with confirm receipt button" loading="lazy"
+             onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption>Confirm and release</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 3: Confirm receipt</h3>
+        <ol>
+         <li>Meet the seller or wait for the rider.</li>
+         <li>Check the item, then tap <b>Confirm receipt</b>.</li>
+         <li>Payment releases — leave a <b>review</b>.</li>
+        </ol>
+       </div>
+      </article>
+     </div>
+    </div>
+    <div class="c-nav" aria-label="Buying guide controls">
+     <button class="c-btn" data-prev type="button">Previous</button>
+     <div class="c-dots" data-dots aria-label="Slide selection"></div>
+     <button class="c-btn" data-next type="button">Next</button>
+    </div>
+   </div>
+
+   <!-- Guide 3: sell & get paid (image slots) -->
+   <div class="guideBlock">
+    <h3>Guide 3 · Sell and get paid</h3>
+    <p class="sub">Shop setup → orders → handoff → bank payout.</p>
+    <div class="carousel" aria-roledescription="carousel" aria-label="Selling and payout guide">
+     <div class="c-track" data-carousel>
+      <article class="c-slide">
+       <figure class="shot" data-slot="Open shop / seller onboarding → save as images/sell-1.jpeg">
+        <img src="images/sell-1.jpeg" alt="Open shop onboarding screen" loading="lazy"
+             onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption>Open your shop</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 1: Open your shop</h3>
+        <ol>
+         <li>Verify your <b>email</b> first (required to sell).</li>
+         <li>Add your <b>shop name</b> and short bio.</li>
+         <li>Add <b>bank details</b> in settings for payouts.</li>
+        </ol>
+       </div>
+      </article>
+      <article class="c-slide">
+       <figure class="shot" data-slot="Seller orders list → save as images/sell-2.jpeg">
+        <img src="images/sell-2.jpeg" alt="Seller orders list with new order" loading="lazy"
+             onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption>Accept the order</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 2: Take the order</h3>
+        <ol>
+         <li>Buyer pays — you see a <b>new order</b>.</li>
+         <li>Chat to agree handoff time and place.</li>
+         <li>Mark <b>ready / handed over</b> when you give the item.</li>
+        </ol>
+       </div>
+      </article>
+      <article class="c-slide">
+       <figure class="shot" data-slot="Seller payouts screen → save as images/sell-3.jpeg">
+        <img src="images/sell-3.jpeg" alt="Seller payouts screen with bank transfer status" loading="lazy"
+             onerror="this.parentElement.classList.add('empty');this.remove()">
+        <figcaption>Payout to your bank</figcaption>
+       </figure>
+       <div class="c-cap">
+        <h3>Step 3: Get paid</h3>
+        <ol>
+         <li>Buyer confirms receipt → payment releases.</li>
+         <li>Payout is sent to your <b>bank account</b>.</li>
+         <li>Track every naira on the <b>Payouts</b> page.</li>
+        </ol>
+       </div>
+      </article>
+     </div>
+    </div>
+    <div class="c-nav" aria-label="Selling guide controls">
+     <button class="c-btn" data-prev type="button">Previous</button>
+     <div class="c-dots" data-dots aria-label="Slide selection"></div>
+     <button class="c-btn" data-next type="button">Next</button>
+    </div>
+   </div>
+
+   <!-- Guide 4: chat & share (image slots) -->
+   <div class="guideBlock">
+    <h3>Guide 4 · Chat, share and track</h3>
+    <p class="sub">Stay in the loop from first message to delivered order.</p>
+    <div class="guideGrid">
+     <figure class="shot" data-slot="Chat thread → save as images/feat-chat.jpeg">
+      <img src="images/feat-chat.jpeg" alt="In-app chat between buyer and seller" loading="lazy"
+           onerror="this.parentElement.classList.add('empty');this.remove()">
+      <figcaption>In-app chat on a listing / order</figcaption>
+     </figure>
+     <figure class="shot" data-slot="Order tracking timeline → save as images/feat-track.jpeg">
+      <img src="images/feat-track.jpeg" alt="Order tracking timeline" loading="lazy"
+           onerror="this.parentElement.classList.add('empty');this.remove()">
+      <figcaption>Order tracking — payment to handoff</figcaption>
+     </figure>
+     <figure class="shot wide" data-slot="Share shop link → save as images/feat-share.jpeg">
+      <img src="images/feat-share.jpeg" alt="Share shop link screen" loading="lazy"
+           onerror="this.parentElement.classList.add('empty');this.remove()">
+      <figcaption>Share your shop link anywhere (WhatsApp, status, bio)</figcaption>
+     </figure>
+    </div>
+   </div>
+  </div>
+ </section>
+
+ <!-- ========== FAQ ========== -->
+ <section id="faq" style="padding-top:0">
+  <div class="wrap">
+   <h2>Questions</h2>
+   <p class="sub"></p>
+   <details><summary>Is it free?</summary><p>Yes — free to download and use. A small commission applies when an item is sold.</p></details>
+   <details><summary>How do payments stay safe?</summary><p>Paystack collects the payment and SupreCart holds it until you confirm you received the item. Only then is the seller paid.</p></details>
+   <details><summary>How fast is delivery?</summary><p>Campus deliveries target within 2 hours. You can also arrange a direct meetup with the seller in chat.</p></details>
+   <details><summary>Who can sell?</summary><p>Verified UNILORIN students. Confirm your email, open a shop, add bank details, and you're live.</p></details>
+   <details><summary>Will it come to the Play Store?</summary><p>That's planned. Once it's live you'll be able to update from there.</p></details>
+   <details><summary>I have an iPhone. What can I do?</summary><p>An iPhone version isn't available yet. Join the community below and we'll tell you when it is.</p></details>
+  </div>
+ </section>
+
+ <!-- ========== CTA ========== -->
  <section style="padding-top:0">
   <div class="wrap">
    <div class="cta">
@@ -265,8 +551,8 @@ var CONFIG = {
   playStoreUrl: "",         // Google Play listing URL
   appStoreUrl: "",          // App Store listing URL
   version: "1.1.0",
-  size: "80 MB",            // e.g. "24 MB"
-  whatsappUrl: "https://chat.whatsapp.com/BF1EXXvMRXy98MT1aExRN8?s=cl&p=a&mlu=4&ilr=4&iam=0"      // your community invite link
+  size: "80 MB",
+  whatsappUrl: "https://chat.whatsapp.com/BF1EXXvMRXy98MT1aExRN8?s=cl&p=a&mlu=4&ilr=4&iam=0"
 };
 // ======================
 (function(){
@@ -288,26 +574,34 @@ var CONFIG = {
     else if(navigator.clipboard){navigator.clipboard.writeText(data.url).then(function(){$("share").textContent="Link copied";setTimeout(function(){$("share").textContent="Share with a friend"},2000)}).catch(function(){});}
   });
 
-  var track=$("guideTrack"), dots=$("cDots"), prev=$("cPrev"), next=$("cNext");
-  if(track&&dots){
+  // Generic carousels: each .carousel owns [data-carousel] track + sibling controls
+  Array.prototype.forEach.call(document.querySelectorAll(".carousel"),function(root){
+    var track=root.querySelector("[data-carousel]");
+    if(!track)return;
+    var block=root.parentElement;
+    var dots=block.querySelector("[data-dots]");
+    var prev=block.querySelector("[data-prev]");
+    var next=block.querySelector("[data-next]");
     var slides=track.children, idx=0;
     function go(i){
       idx=(i+slides.length)%slides.length;
       track.style.transform="translateX(-"+(idx*100)+"%)";
-      Array.prototype.forEach.call(dots.children,function(d,j){d.setAttribute("aria-current", j===idx?"true":"false");});
+      if(dots)Array.prototype.forEach.call(dots.children,function(d,j){d.setAttribute("aria-current", j===idx?"true":"false");});
     }
-    for(var i=0;i<slides.length;i++){
-      (function(i){
-        var b=document.createElement("button");
-        b.type="button"; b.className="c-dot"; b.setAttribute("aria-label","Go to slide "+(i+1));
-        b.addEventListener("click",function(){go(i);});
-        dots.appendChild(b);
-      })(i);
+    if(dots){
+      for(var i=0;i<slides.length;i++){
+        (function(i){
+          var b=document.createElement("button");
+          b.type="button"; b.className="c-dot"; b.setAttribute("aria-label","Go to slide "+(i+1));
+          b.addEventListener("click",function(){go(i);});
+          dots.appendChild(b);
+        })(i);
+      }
     }
     if(prev)prev.addEventListener("click",function(){go(idx-1);});
     if(next)next.addEventListener("click",function(){go(idx+1);});
     go(0);
-  }
+  });
 })();
 </script>
 </body>
