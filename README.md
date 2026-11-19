@@ -32,16 +32,21 @@ expected file. If the file is missing, the slot shows a dashed placeholder with
 that path. Drop the file into `images/` with the exact name and refresh — no HTML
 edit needed.
 
-| Slot | File to add under `images/` |
+| Slot | File under `images/` |
 | --- | --- |
-| Overview screenshot | `overview-app.jpeg` |
+| Overview screenshot | `home.jpg` ✓ |
+| Buy guide — pay | `checkout.jpg` ✓ |
+| Buy guide — confirm receipt | `order_details1.jpg` ✓ |
+| Order tracking | `order_details2.jpg` ✓ |
+| Share shop link | `shop_share.jpg` ✓ |
 | Seller dashboard | `roles-seller.jpeg` |
 | Rider / logistics view | `roles-rider.jpeg` |
-| Buy guide step 1–3 | `buy-1.jpeg`, `buy-2.jpeg`, `buy-3.jpeg` |
+| Buy guide — find item | `buy-1.jpeg` |
 | Sell guide step 1–3 | `sell-1.jpeg`, `sell-2.jpeg`, `sell-3.jpeg` |
-| Chat / tracking / share | `feat-chat.jpeg`, `feat-track.jpeg`, `feat-share.jpeg` |
+| Chat thread | `feat-chat.jpeg` |
 
 Already present (listing guide): `1.jpeg`, `2.jpeg`, `3.jpeg`.
+✓ = already added.
 
 Prefer `.jpeg` / `.jpg` / `.png`. Keep screenshots under ~300 KB so the page stays
 fast on mobile data.
